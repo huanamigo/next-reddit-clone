@@ -1,21 +1,11 @@
 import { Button } from '@nextui-org/react';
-import * as actions from '@/actions';
 import { auth } from '@/auth';
-import Image from 'next/image';
 
 export default async function Home() {
   const session = await auth();
 
   return (
     <div>
-      <form action={actions.signIn}>
-        <Button type="submit">sign in</Button>
-      </form>
-
-      <form action={actions.signOut}>
-        <Button type="submit">sign out</Button>
-      </form>
-
       <div>
         {session?.user ? (
           <div>
