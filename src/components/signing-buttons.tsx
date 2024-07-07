@@ -1,15 +1,34 @@
-import { auth } from '@/auth';
+'use client';
 import * as actions from '@/actions';
+import { useSession } from 'next-auth/react';
 
-import { Avatar, Button, NavbarItem } from '@nextui-org/react';
+import {
+  Avatar,
+  Button,
+  NavbarItem,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@nextui-org/react';
 
-export default async function SigningButtons() {
-  const session = await auth();
+export default function SigningButtons() {
+  const session = useSession();
 
   return (
     <>
-      {session?.user ? (
-        <Avatar src={session.user.image || ''} />
+      {session.status === 'loading' ? null : session.data?.user ? (
+        <Popover placement="left">
+          <PopoverTrigger>
+            <Avatar src={session.data.user.image || ''} />
+          </PopoverTrigger>
+          <PopoverContent>
+            <div className="p-4">
+              <form action={actions.signOut}>
+                <Button type="submit">Sign out</Button>
+              </form>
+            </div>
+          </PopoverContent>
+        </Popover>
       ) : (
         <>
           <NavbarItem>

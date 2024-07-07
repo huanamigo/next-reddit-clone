@@ -7,8 +7,9 @@ import {
 } from '@nextui-org/react';
 import Link from 'next/link';
 import SigningButtons from './signing-buttons';
+import { SessionProvider } from 'next-auth/react';
 
-export default async function Header() {
+export default function Header() {
   return (
     <Navbar className="shadow mb-6">
       <NavbarBrand>
@@ -24,7 +25,9 @@ export default async function Header() {
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <SigningButtons />
+        <SessionProvider>
+          <SigningButtons />
+        </SessionProvider>
       </NavbarContent>
     </Navbar>
   );
