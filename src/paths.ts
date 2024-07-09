@@ -2,7 +2,7 @@ const paths = {
   home() {
     return '/';
   },
-  topicShow(slug: string) {
+  showTopic(slug: string) {
     return `/topics/${slug}`;
   },
   createTopic(slug: string) {
