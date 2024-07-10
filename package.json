@@ -13,6 +13,7 @@
     "@auth/core": "0.18.1",
     "@auth/prisma-adapter": "1.0.6",
     "@nextui-org/react": "^2.4.2",
+    "@nextui-org/user": "0.0.0-canary-20240616172522",
     "@prisma/client": "^5.15.0",
     "framer-motion": "^11.2.10",
     "next": "14.2.4",

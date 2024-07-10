@@ -10,9 +10,15 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@nextui-org/react';
+import { FormEvent } from 'react';
 
 export default function SigningButtons() {
   const session = useSession();
+
+  const handleSignIn = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    actions.signIn();
+  };
 
   return (
     <>
@@ -32,7 +38,7 @@ export default function SigningButtons() {
       ) : (
         <>
           <NavbarItem>
-            <form action={actions.signIn}>
+            <form onSubmit={handleSignIn}>
               <Button type="submit" color="secondary" variant="bordered">
                 Sign in
               </Button>
@@ -40,7 +46,7 @@ export default function SigningButtons() {
           </NavbarItem>
 
           <NavbarItem>
-            <form action={actions.signIn}>
+            <form onSubmit={handleSignIn}>
               <Button type="submit" color="primary" variant="flat">
                 Sign up
               </Button>
