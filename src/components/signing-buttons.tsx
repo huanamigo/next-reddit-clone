@@ -11,6 +11,8 @@ import {
   PopoverTrigger,
 } from '@nextui-org/react';
 import { FormEvent } from 'react';
+import { revalidatePath } from 'next/cache';
+import Router from 'next/router';
 
 export default function SigningButtons() {
   const session = useSession();
@@ -31,6 +33,14 @@ export default function SigningButtons() {
             <div className="p-4">
               <form action={actions.signOut}>
                 <Button type="submit">Sign out</Button>
+                <Button
+                  onClick={() => {
+                    Router.reload();
+                  }}
+                  type="button"
+                >
+                  Test
+                </Button>
               </form>
             </div>
           </PopoverContent>

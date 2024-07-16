@@ -4,6 +4,7 @@ import * as auth from '@/auth';
 import { revalidatePath } from 'next/cache';
 
 export async function signOut() {
-  revalidatePath('/');
-  return auth.signOut();
+  return (
+    revalidatePath('/'), auth.signOut({ redirectTo: 'http://localhost:3000/' })
+  );
 }
