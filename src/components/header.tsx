@@ -3,11 +3,11 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Input,
 } from '@nextui-org/react';
 import Link from 'next/link';
 import SigningButtons from './signing-buttons';
 import { SessionProvider } from 'next-auth/react';
+import SearchInput from './search-input';
 
 export default function Header() {
   return (
@@ -20,7 +20,7 @@ export default function Header() {
 
       <NavbarContent justify="center">
         <NavbarItem>
-          <Input />
+          <SearchInput />
         </NavbarItem>
       </NavbarContent>
 
