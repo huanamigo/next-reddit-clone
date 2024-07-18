@@ -11,7 +11,6 @@ import {
   PopoverTrigger,
 } from '@nextui-org/react';
 import { FormEvent } from 'react';
-import { revalidatePath } from 'next/cache';
 import Router from 'next/router';
 
 export default function SigningButtons() {

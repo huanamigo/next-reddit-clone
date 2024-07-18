@@ -8,6 +8,7 @@ import Link from 'next/link';
 import SigningButtons from './signing-buttons';
 import { SessionProvider } from 'next-auth/react';
 import SearchInput from './search-input';
+import { Suspense } from 'react';
 
 export default function Header() {
   return (
@@ -20,7 +21,9 @@ export default function Header() {
 
       <NavbarContent justify="center">
         <NavbarItem>
-          <SearchInput />
+          <Suspense>
+            <SearchInput />
+          </Suspense>
         </NavbarItem>
       </NavbarContent>
 
