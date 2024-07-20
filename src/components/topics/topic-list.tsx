@@ -11,7 +11,7 @@ export default async function TopicList() {
       {topics.map((topic) => (
         <div key={topic.id}>
           <Link href={paths.showTopic(topic.slug)}>
-            <Chip color="warning" variant="shadow">
+            <Chip className="text-sm font-medium me-2 px-2.5 py-0.5 rounded bg-gray-700 text-gray-300">
               {topic.slug}
             </Chip>
           </Link>

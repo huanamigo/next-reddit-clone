@@ -17,7 +17,9 @@ export default function TopicCreateForm() {
   return (
     <Popover>
       <PopoverTrigger>
-        <Button color="primary">Create a Topic</Button>
+        <div className="flex justify-center w-90">
+          <Button color="primary">Create a Topic</Button>
+        </div>
       </PopoverTrigger>
       <PopoverContent>
         <form action={action}>
