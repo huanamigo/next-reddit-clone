@@ -39,7 +39,7 @@ export default function CommentCreateForm({
       <div className="space-y-2 px-1">
         <Textarea
           name="content"
-          label="Reply"
+          label=" "
           placeholder="Enter your comment"
           isInvalid={!!formState.errors.content}
           errorMessage={formState.errors.content?.join(', ')}

@@ -32,14 +32,6 @@ export default function SigningButtons() {
             <div className="p-4">
               <form action={actions.signOut}>
                 <Button type="submit">Sign out</Button>
-                <Button
-                  onClick={() => {
-                    Router.reload();
-                  }}
-                  type="button"
-                >
-                  Test
-                </Button>
               </form>
             </div>
           </PopoverContent>
