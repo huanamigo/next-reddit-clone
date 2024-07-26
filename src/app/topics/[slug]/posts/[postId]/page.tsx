@@ -18,10 +18,7 @@ export default async function PostShowPage({ params }: PostShowPageProps) {
 
   return (
     <div className="space-y-3">
-      <Link
-        className="underline decoration-solid"
-        href={paths.showPost(slug, postId)}
-      >
+      <Link className="underline decoration-solid" href={paths.showTopic(slug)}>
         {'< '}Back to {slug}
       </Link>
       <Suspense fallback={<PostShowLoading />}>
