@@ -38,7 +38,7 @@ export async function removePost(
   if (session.user.id !== post?.userId) {
     return {
       errors: {
-        _form: ['You have to be signed a creator to remove a Post'],
+        _form: ['You have to be signed as a creator to remove a Post'],
       },
     };
   }
