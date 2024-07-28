@@ -25,7 +25,7 @@ export default function SigningButtons() {
     <>
       {session.status === 'loading' ? null : session.data?.user ? (
         <Popover placement="left">
-          <PopoverTrigger>
+          <PopoverTrigger className="cursor-pointer">
             <Avatar src={session.data.user.image || ''} />
           </PopoverTrigger>
           <PopoverContent>

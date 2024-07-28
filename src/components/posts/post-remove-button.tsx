@@ -19,8 +19,8 @@ const PostRemoveButton = ({ postId }: PostRemoveButtonProps) => {
   });
 
   return (
-    <Popover>
-      <PopoverTrigger>
+    <Popover placement="bottom">
+      <PopoverTrigger className="cursor-pointer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="24px"
