@@ -16,11 +16,11 @@ export default function TopicCreateForm() {
 
   return (
     <Popover>
-      <PopoverTrigger>
-        <div className="flex justify-center w-90">
+      <div className="flex justify-center w-90">
+        <PopoverTrigger>
           <Button color="primary">Create a Topic</Button>
-        </div>
-      </PopoverTrigger>
+        </PopoverTrigger>
+      </div>
       <PopoverContent>
         <form action={action}>
           <div className="flex flex-col gap-4 p-4 w-80">

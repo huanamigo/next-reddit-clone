@@ -5,6 +5,10 @@ import { useSession } from 'next-auth/react';
 import {
   Avatar,
   Button,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
   NavbarItem,
   Popover,
   PopoverContent,
@@ -24,18 +28,37 @@ export default function SigningButtons() {
   return (
     <>
       {session.status === 'loading' ? null : session.data?.user ? (
-        <Popover placement="left">
-          <PopoverTrigger className="cursor-pointer">
+        // <Popover placement="left">
+        //   <PopoverTrigger className="cursor-pointer">
+        //     <Avatar src={session.data.user.image || ''} />
+        //   </PopoverTrigger>
+        //   <PopoverContent>
+        //     <div className="p-4">
+        //       <form action={actions.signOut}>
+        //         <Button type="submit">Sign out</Button>
+        //       </form>
+        //     </div>
+        //   </PopoverContent>
+        // </Popover>
+        <Dropdown>
+          <DropdownTrigger className="cursor-pointer">
             <Avatar src={session.data.user.image || ''} />
-          </PopoverTrigger>
-          <PopoverContent>
-            <div className="p-4">
+          </DropdownTrigger>
+          <DropdownMenu>
+            {/* <DropdownItem>
+              <div className="p-4">
+                <form action={actions.signOut}>
+                  <Button type="submit">Sign out</Button>
+                </form>
+              </div>
+            </DropdownItem> */}
+            <DropdownItem key="delete" className="text-danger" color="danger">
               <form action={actions.signOut}>
-                <Button type="submit">Sign out</Button>
+                <button type="submit">Logout</button>
               </form>
-            </div>
-          </PopoverContent>
-        </Popover>
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
       ) : (
         <>
           <NavbarItem>
